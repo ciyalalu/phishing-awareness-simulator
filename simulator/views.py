@@ -32,7 +32,9 @@ def login_view(request):
 
 
 def warning_view(request):
-    return render(request, "warning.html")
+    is_analyst = request.GET.get("analyst") == "true"
+    return render(request, "warning.html", {"is_analyst": is_analyst})
+
 
 
 def soc_dashboard(request):

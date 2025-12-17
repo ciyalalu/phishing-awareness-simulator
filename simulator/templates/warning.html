@@ -2,26 +2,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Popeye Says</title>
+    <title>Phishing Awareness</title>
     <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 <body>
 
 <div class="card">
 
-    <h2>⚠️ Ah-Gah-Gah-Gah!</h2>
+    <!-- SOC Dashboard Button -->
+   {% if is_analyst %}
+<a href="/soc-dashboard/" class="soc-btn">SOC Dashboard</a>
+{% endif %}
+
+
+    <h2>⚠️ Phishing Simulation</h2>
 
     <p style="text-align:center;">
         This was a <strong>PHISHING SIMULATION</strong>.
     </p>
 
     <p style="font-size:14px; text-align:center;">
-        Even Popeye can be tricked if he clicks links blindly.<br>
-        Always check URLs, urgency, and sender identity.
+        You entered credentials into a fake page.<br>
+        Always verify links, urgency, and sender identity.
     </p>
+<p style="font-size:10px; text-align:center; color:#a7f3d0; margin-top:10px;">
+   💡 Ref: awareness_mode |  Analyst note: restricted view available |?analyst=true
+
+</p>
 
     <div class="spinach">
-        Strong security comes from awareness 🥬
+        Strong security comes from awareness 🛡️
+    </div>
+
+    <div class="footer">
+        Cyber Security Awareness Lab
     </div>
 
 </div>
