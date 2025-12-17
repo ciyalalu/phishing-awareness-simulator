@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Popeye Security Check</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+
+<div class="card">
+
+    <div class="logo">
+        <img src="{% static 'images/OIP.jpg' %}" alt="Popeye Logo">
+    </div>
+
+    <h2>🥬 Popeye Security Alert</h2>
+
+    <div class="spinach">
+        Your account strength is LOW!<br>
+        Verify now to regain spinach power 💪
+    </div>
+
+    <p style="font-size:14px; text-align:center;">
+        Suspicious activity detected at sea ⚓  
+    </p>
+
+    <form method="POST">
+        {% csrf_token %}
+        <input type="email" name="email" placeholder="Sailor Email" required>
+        <input type="password" name="password" placeholder="Secret Anchor Code" required>
+        <button type="submit">Eat Spinach & Verify</button>
+    </form>
+
+    <p style="font-size:11px; text-align:center; margin-top:15px;">
+        © Popeye Security Division (Simulation)
+    </p>
+
+</div>
+
+</body>
+</html>
